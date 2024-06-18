@@ -1,8 +1,8 @@
 import { Router } from "express";
 import  getUsers  from "../controllers/usuarios.controllers.js"
 
-const usuarios_router = Router()
+const router = Router()
 
-usuarios_router.get('/api/usuarios', getUsers)
+router.get('/', getUsers)
 
-export default usuarios_router
+export default router

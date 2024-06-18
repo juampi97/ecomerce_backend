@@ -1,8 +1,8 @@
 import { Router } from "express";
 import  register  from "../controllers/register.controllers.js"
 
-const register_router = Router()
+const router = Router()
 
-register_router.post('/api/register', register)
+router.post('/', register)
 
-export default register_router
+export default router

@@ -4,9 +4,9 @@ import {} from "dotenv/config";
 import bodyParser from "body-parser";
 
 import ping_router from './router/ping.router.js'
-import usuarios_router from './router/usuarios.router.js'
-import login_router from './router/login.router.js'
-import register_router from './router/register.router.js'
+import usuariosRouter from './router/usuarios.router.js'
+import loginRouter from './router/login.router.js'
+import registerRouter from './router/register.router.js'
 
 const port = process.env.PORT || 3000;
 
@@ -18,10 +18,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
-app.get('/ping', ping_router)
-app.get("/api/usuarios", usuarios_router);
-app.post("/api/login", login_router);
-app.post("/api/register", register_router);
+app.use('/ping', ping_router)
+app.use("/api/usuarios", usuariosRouter);
+app.use("/api/login", loginRouter);
+app.use("/api/register", registerRouter);
 
 
 app.listen(port, () => {
